@@ -9,13 +9,16 @@ int a = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите конечное значение массива: ");
 int b = int.Parse(Console.ReadLine());
 
-void RandArray()
+int[] RandArray(int first, int second, int thirst)
 {
-    int[] arr = new int[n];
+    int[] arr = new int[first];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = new Random().Next(a, b);
+        arr[i] = new Random().Next(second, thirst + 1);
     }
-    Console.WriteLine($"[{String.Join(", ", arr)}]");
+    return arr;
 }
-RandArray();
+//Console.WriteLine(RandArray(n,a,b));
+int[] arr = RandArray(n,a,b);
+Console.WriteLine($"[{String.Join(", ", arr)}]");
+//RandArray(n,a,b);
